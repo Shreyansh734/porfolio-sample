@@ -1,45 +1,89 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     background-image: url('2c55f9c9326e9232526557b63cd59638.jpg');
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
-.navbar{
+
+/* ---------- Navbar ---------- */
+.navbar {
     background-color: rgb(35 31 31);
     color: grey;
-    border:2px solid grey;
+    border: 2px solid grey;
     border-radius: 40px;
-    margin: 0 40px;
+    margin: 10px clamp(10px, 3vw, 40px);
 }
-ul{
+
+ul {
     list-style: none;
-    font-size: 22px;
+    font-size: clamp(14px, 1.6vw, 22px);
     font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
-li{
-    display: inline-block;
-    padding: 20px;
-    margin-left: 153px;
+
+li {
+    padding: clamp(8px, 1.5vw, 20px);
 }
-.paraheading{
+
+/* ---------- Content ---------- */
+.paraheading {
     display: grid;
     place-items: center;
+    padding: 0 20px;
 }
-.h2{
+
+.h2 {
     color: rgb(62, 116, 112);
     font-family: 'Courier New', Courier, monospace;
-    font-size: 50px;
-    margin: 60px;
+    font-size: clamp(28px, 5vw, 50px);
+    margin: clamp(25px, 5vw, 60px) 0;
+    text-align: center;
 }
-p{
+
+p {
     color: black;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 31px;
-    margin-left: 168px;
-    margin-top: 48px;
-    margin-right: 800px;
+    font-size: clamp(16px, 2.2vw, 31px);
+    line-height: 1.5;
+    text-align: left;
+    width: min(100%, 900px);
+    margin: clamp(20px, 3vw, 48px) auto 0;
+}
 
+/* ---------- Tablet ---------- */
+@media (max-width: 768px) {
+    .navbar {
+        border-radius: 25px;
+    }
+    p {
+        width: 100%;
+    }
+}
+
+/* ---------- Smartphone ---------- */
+@media (max-width: 480px) {
+    .navbar {
+        border-radius: 20px;
+        border-width: 1px;
+    }
+    ul {
+        justify-content: center;
+    }
+    li {
+        padding: 8px 10px;
+    }
+    p {
+        text-align: justify;
+    }
 }
